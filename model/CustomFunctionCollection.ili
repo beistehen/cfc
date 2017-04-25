@@ -1,0 +1,45 @@
+INTERLIS 2.3;
+
+CONTRACTED MODEL CFC_V1_0 (en) AT "http://ilivalidator.stehen.ch"
+	VERSION "draft" =
+	
+	/*
+	* Search for a regular expression in a string
+	*
+	* @param string Input string to be processed
+	* @param regex Regular expression to be used against input string
+	* @return TRUE, if regex matches input string; otherwise FALSE
+	*
+	* @author Stefan Henrich
+	* @version 0.9
+	* @since 2017-04-16
+	*/
+	FUNCTION StringMatches(string: TEXT; regex: TEXT): BOOLEAN;
+	
+	/*
+	* Search for a string in another string, starting at a specified index
+	*
+	* @param string Input string to be processed
+	* @param searchstring String to search for in input string
+	* @param fromIndex The index to start the search from
+	* @return Index of first occurence of searchstring in input string; -1 if searchstring is not found
+	*
+	* @author Stefan Henrich
+	* @version 0.9
+	* @since 2017-04-16
+	*/
+	FUNCTION StringIndexOf (string: TEXT; searchstring: TEXT; fromIndex: NUMERIC): NUMERIC;
+	
+	/*
+	* Checks whether the specified EGID exists in GWR data of BGDI using REST service  
+	*
+	* @param egid The EGID to look up
+	* @return TRUE, if EGID exists in BGDI; otherwise FALSE 
+	*
+	* @author Stefan Ziegler
+	* @version 0.9
+	* @since 2017-04-24
+	*/
+	FUNCTION check4GWR (egid: NUMERIC): BOOLEAN;
+	
+END CFC_V1_0.
